@@ -9,7 +9,6 @@ function get_event_image() {
 		success: function(data) {
 			var img = data["cover"]["source"]; 
 			$('section.activities').append('<img src="'+img+'">'); 
-			console.log(img); 
 		}
 	}); 
 }
