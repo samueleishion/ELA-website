@@ -1,0 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700|Hammersmith+One);
+* { margin:0px; padding:0px; } 
+
+body { font-family:'Alegreya Sans', Helvetica; /* Alegreya Sans, Hammersmith One */ 
+	font-weight:Normal; /* Light, Normal, Bold */
+	font-size:11pt; }
+
+h1 { font-family:'Hammersmith One', Helvetica; }
+
+section { display:block; 
+	padding:40px 0px; } 
+content { display:block; 
+	width:1000px; 
+	margin:auto; } 
