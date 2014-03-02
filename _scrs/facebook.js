@@ -15,7 +15,9 @@ function get_event_image() {
 }
 
 function get_page_info() {
-	FB.api('/ELAatUTCS',function(data) {
-		console.log(data); 
-	}); 
+	$.getScript('//connect.facebook.net/en_US/all.js',function() {
+		FB.api('/ELAatUTCS',function(data) {
+			console.log(data); 
+		});
+	});  
 }
