@@ -1,5 +1,6 @@
 $(document).ready(function() { 
 	get_event_image(); 
+	get_page_info(); 
 }); 
 
 function get_event_image() {
@@ -10,5 +11,11 @@ function get_event_image() {
 			var img = data["cover"]["source"]; 
 			$('section.activities').append('<img src="'+img+'">'); 
 		}
+	}); 
+}
+
+function get_page_info() {
+	FB.api('/ELAatUTCS',function(data) {
+		console.log(data); 
 	}); 
 }
