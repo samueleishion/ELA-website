@@ -45,7 +45,23 @@ section.intro { background-image:url('../_imgs/intro.jpg');
 		color:#6af; 
 		padding-left:10px; }
 
-section.activities { padding:0px; } 
+section.activities { padding:0px; 
+	background-image:url('../_imgs/pattern.png'); } 
 
-section.activities content img { margin:auto; 
-	width:1000px; }
+	section.activities content img { margin:auto; 
+		width:1000px; }
+
+section.previous { background-color:#eee; }
+
+	section.previous a { }
+
+	.event { display:inline-block; 
+		padding:20px; } 
+
+		.event img { border:5px solid #fff; 
+			box-shadow:1px 0px 15px rgba(0,0,0,.3); 
+			-webkit-transition-delay:initial; 
+			-webkit-transition-duration:0.1s; 
+			-webkit-transition-property:all; 
+			-webkit-transition-timing-function:linear;} 
+		.event:hover img { box-shadow:1px 0px 15px rgba(0,0,0,.8); }

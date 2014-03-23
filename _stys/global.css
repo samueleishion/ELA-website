@@ -5,7 +5,11 @@ body { font-family:'Alegreya Sans', Helvetica; /* Alegreya Sans, Hammersmith One
 	font-weight:Normal; /* Light, Normal, Bold */
 	font-size:11pt; }
 
-h1 { font-family:'Hammersmith One', Helvetica; }
+a { color:#06c; 
+	text-decoration:none; }
+a:hover { color:#09f; }
+
+h1,h2 { font-family:'Hammersmith One', Helvetica; }
 
 section { display:block; 
 	padding:40px 0px; } 

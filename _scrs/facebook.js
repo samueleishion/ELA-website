@@ -33,8 +33,7 @@ function get_page_albums() {
 				if(!valid_album_name(name)) continue; 
 				id = album["id"]; 
 				url = album["link"]; 
-				get_album_picture(id); 
-				get_album_photos(id); 
+				get_album_picture(id,name,url); 
 			}
 		});
 	});  
@@ -44,10 +43,11 @@ function valid_album_name(album_name) {
 	return !((album_name=="Cover Photos") || (album_name=="Profile Pictures") || (album_name=="Timeline Photos")); 
 }
 
-function get_album_picture(album_id) { 
+function get_album_picture(album_id,name,url) { 
 	$.getScript('//connect.facebook.net/en_US/all.js',function() {
 		FB.api('/'+album_id+'/picture',function(data) {
 			var img = data["data"]["url"]; 
+			$('section.previous content').append('<a href="'+url+'" target="_new" class="event"><img src="'+img+'"><h3>'+name+'</h3>'); 
 		}); 
 	}); 
 }
