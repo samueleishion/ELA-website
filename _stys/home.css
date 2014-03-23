@@ -44,3 +44,8 @@ section.intro { background-image:url('../_imgs/intro.jpg');
 		font-weight:bold; 
 		color:#6af; 
 		padding-left:10px; }
+
+section.activities { padding:0px; } 
+
+section.activities content img { margin:auto; 
+	width:1000px; }
