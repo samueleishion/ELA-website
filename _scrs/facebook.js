@@ -8,8 +8,20 @@ function get_event_image() {
 		type:'GET', 
 		url:'http://graph.facebook.com/ELAatUTCS', 
 		success: function(data) {
-			var img = data["cover"]["source"]; 
-			$('section.activities content').append('<img src="'+img+'">'); 
+			var src = data["cover"]["source"]; 
+
+			$('section.activities content').append('<img src="'+src+'">'); 
+			$('section.activities content').append('<input type="hidden" id="src" value="'+src+'">'); 
+		}, 
+		complete: function() {
+			var src = $('section.activities #src').val(); 
+			var img = new Image(); 
+			var context, data; 
+			var x = 0, y = 0; 
+			img.src = src; 
+			context = document.getElementById('canvas').getContext('2d'); 
+			context.drawImage(img,0,0); 
+			console.log(context.getImageData(x,y,1,1)); 
 		}
 	}); 
 }
@@ -47,7 +59,7 @@ function get_album_picture(album_id,name,url) {
 	$.getScript('//connect.facebook.net/en_US/all.js',function() {
 		FB.api('/'+album_id+'/picture',function(data) {
 			var img = data["data"]["url"]; 
-			$('section.previous content').append('<a href="'+url+'" target="_new" class="event"><img src="'+img+'"><h3>'+name+'</h3>'); 
+			$('section.previous content').append('<a href="'+url+'" target="_new" class="event"><div class="image" style="background-image:url('+img+');"></div><h3>'+name+'</h3>'); 
 		}); 
 	}); 
 }
@@ -59,6 +71,14 @@ function get_album_photos(album_id) {
 			for(var i = 0; i < data["data"].length; i++) {
 				img = data["data"][i]["images"]; 
 			} 
+		}); 
+	}); 
+}
+
+function get_page_events() {
+	$.getScript('//connect.facebook.net/en_US/all.js',function() {
+		FB.api('/ELAatUTCS/events',function(data) {
+			console.log(data); 
 		}); 
 	}); 
 }
